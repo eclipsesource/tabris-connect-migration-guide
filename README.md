@@ -172,7 +172,7 @@
    
          - name: Build application
            env:
-             TABRIS_BUILD_KEY: ${{ secrets.TABRIS_IOS_BUILD_KEY }}
+             TABRIS_BUILD_KEY: ${{ secrets.TABRIS_BUILD_KEY }}
            run: |
              tabris build ios --debug --device --verbose
    
@@ -273,7 +273,7 @@ jobs:
 
       - name: Build application
         env:
-          TABRIS_BUILD_KEY: ${{ secrets.TABRIS_IOS_BUILD_KEY }}
+          TABRIS_BUILD_KEY: ${{ secrets.TABRIS_BUILD_KEY }}
         run: |
           tabris build ios --${{ github.event.inputs.build_type }} --device --verbose
 
@@ -365,7 +365,7 @@ This workflow has to be triggered manually on Github. Go to "Actions" tab, selec
 
           - name: Execute build
             env:
-              TABRIS_BUILD_KEY: ${{ secrets.TABRIS_IOS_BUILD_KEY }}
+              TABRIS_BUILD_KEY: ${{ secrets.TABRIS_BUILD_KEY }}
             run: |
               tabris build --release android -- --packageType=bundle
 
